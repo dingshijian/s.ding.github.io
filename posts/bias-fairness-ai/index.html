@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>The Double-Edged Sword of AI – dat303-blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">dat303-blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Shawn Ding</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Double-Edged Sword of AI</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div id="7612c005" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title: AI Isn<span class="st">'t Magic: Understanding and Addressing Bias &amp; Fairness in Data Science</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="er">author: Shawn Ding</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>date: <span class="dv">2025</span><span class="op">-</span><span class="dv">0</span><span class="er">4</span><span class="op">-</span><span class="dv">26</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>categories: AI Ethics, Data Science, Machine Learning, Bias, Fairness, Responsible AI</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>jupyter: python3 </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Artificial Intelligence and Machine Learning are transforming our world, from suggesting movies and optimizing routes to assisting in medical diagnoses and financial decisions. We often marvel at the capabilities of these systems. But beneath the surface of seemingly objective algorithms, there can lurk hidden dangers: <strong>bias</strong> and <strong>unfairness</strong>.</p>
+<p>As data scientists and practitioners, we build these systems. It’s not enough to chase accuracy metrics; we have a crucial responsibility to understand how our models can inherit and even amplify societal biases, leading to discriminatory or harmful outcomes.</p>
+<p>This post explores:</p>
+<ol type="1">
+<li><strong>What AI bias is</strong> and where it comes from.</li>
+<li><strong>Why addressing bias is critical</strong> (the real-world consequences).</li>
+<li>The complex concept of <strong>AI fairness</strong>.</li>
+<li><strong>Strategies and approaches</strong> data scientists can use to mitigate bias and promote fairness in their workflows.</li>
+</ol>
+<p>Let’s unpack why building <em>responsible</em> AI is just as important as building <em>powerful</em> AI.</p>
+<section id="what-is-ai-bias-where-does-it-come-from" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-ai-bias-where-does-it-come-from">What is AI Bias? Where Does It Come From?</h2>
+<p>In the context of AI, <strong>bias</strong> refers to systematic errors or skewed outcomes in a machine learning model that result in unfair or prejudiced treatment of certain groups or individuals. It’s not necessarily about malicious intent; often, bias creeps in subtly through the data and decisions made during the model development process.</p>
+<p>Common sources include:</p>
+<ol type="1">
+<li><p><strong>Data Bias:</strong> This is the most frequent culprit.</p>
+<ul>
+<li><strong>Historical Bias:</strong> The data reflects existing societal prejudices. If hiring data from the past shows fewer women were hired for tech roles (due to historical bias), a model trained on this data might learn to unfairly favor male candidates, even if gender isn’t explicitly used as a feature.</li>
+<li><strong>Sampling Bias:</strong> The data collected isn’t representative of the real-world population the model will be used on. (e.g., facial recognition trained primarily on lighter skin tones performing poorly on darker skin tones).</li>
+<li><strong>Measurement Bias:</strong> The way features are measured or chosen is skewed across different groups. (e.g., using “arrests” as a proxy for “criminality” can be biased, as arrest practices themselves can be discriminatory).</li>
+</ul></li>
+<li><p><strong>Algorithmic Bias:</strong> Some algorithms might inherently produce biased outcomes, or the choices made when designing the algorithm (like the objective function it tries to optimize) can lead to unfairness. Optimizing purely for overall accuracy might disadvantage smaller minority groups where errors don’t impact the overall accuracy number as much.</p></li>
+<li><p><strong>Human Bias:</strong> The biases of the data scientists and engineers building the models can influence feature selection, data labeling, model choices, and how results are interpreted.</p></li>
+</ol>
+<p><strong>Example:</strong> Imagine building a loan approval model. If the training data historically shows lower approval rates for applicants from certain neighborhoods (perhaps due to past redlining practices, not individual creditworthiness), the model might learn this pattern and perpetuate the bias, unfairly denying loans to qualified applicants from those areas.</p>
+</section>
+<section id="what-does-fairness-even-mean-in-ai" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-fairness-even-mean-in-ai">What Does “Fairness” Even Mean in AI?</h2>
+<p>While we can identify bias, defining and achieving “fairness” is much harder. There isn’t one single mathematical definition of fairness that applies to all situations. What’s considered fair often depends on the context and societal values.</p>
+<p>Some common mathematical fairness criteria include:</p>
+<ul>
+<li><strong>Demographic Parity (Statistical Parity):</strong> The model’s predictions are independent of sensitive attributes (like race or gender). For example, the percentage of people approved for a loan should be roughly the same across all groups. <em>Problem:</em> This might lead to unqualified individuals being approved (or qualified denied) just to meet quotas, ignoring individual merit.</li>
+<li><strong>Equal Opportunity:</strong> The model has an equal <em>true positive rate</em> across different groups. For example, among all qualified applicants, the percentage approved should be the same regardless of group. <em>Problem:</em> Might not address disparities in false positive rates (unqualified people being approved).</li>
+<li><strong>Equalized Odds:</strong> The model has both an equal true positive rate <em>and</em> an equal <em>false positive rate</em> across groups. This is a stricter criterion.</li>
+<li><strong>Predictive Parity:</strong> The model’s precision (Positive Predictive Value) is the same across groups. If the model predicts someone will repay a loan, the probability they <em>actually</em> repay is the same regardless of group.</li>
+</ul>
+<p><strong>The Catch:</strong> It’s often mathematically impossible to satisfy all these fairness criteria simultaneously, especially if the underlying base rates differ between groups. Choosing which fairness definition to prioritize involves trade-offs and requires careful consideration of the specific application and potential harms.</p>
+</section>
+<section id="taking-action-how-can-we-build-fairer-ai" class="level2">
+<h2 class="anchored" data-anchor-id="taking-action-how-can-we-build-fairer-ai">Taking Action: How Can We Build Fairer AI?</h2>
+<p>Addressing bias isn’t a single step but an ongoing process throughout the machine learning lifecycle. Here are key strategies:</p>
+<ol type="1">
+<li><strong>Preprocessing (Data Phase):</strong>
+<ul>
+<li><strong>Data Collection:</strong> Strive for representative datasets. Actively seek data from underrepresented groups.</li>
+<li><strong>Feature Engineering:</strong> Carefully examine features for potential proxies for sensitive attributes. Audit and potentially remove or transform biased features.</li>
+<li><strong>Data Augmentation/Reweighing:</strong> Generate synthetic data for minority groups or adjust the weight given to different data points during training to balance representation.</li>
+</ul></li>
+<li><strong>In-processing (Modeling Phase):</strong>
+<ul>
+<li><strong>Algorithm Selection:</strong> Choose algorithms less prone to certain types of bias or use fairness-aware algorithms.</li>
+<li><strong>Fairness Constraints:</strong> Modify the learning process by adding constraints or regularization terms to the model’s objective function that penalize unfair outcomes according to a chosen fairness metric.</li>
+</ul></li>
+<li><strong>Post-processing (Adjustment Phase):</strong>
+<ul>
+<li><strong>Threshold Adjustment:</strong> Adjust the prediction threshold (e.g., the score needed for loan approval) differently for different groups to achieve a specific fairness goal (like equal opportunity). This is done <em>after</em> the model is trained. <em>Caution:</em> This can be controversial and requires careful justification.</li>
+</ul></li>
+<li><strong>Evaluation and Monitoring:</strong>
+<ul>
+<li><strong>Use Fairness Metrics:</strong> Don’t just measure overall accuracy. Explicitly measure fairness metrics (like those mentioned above) across different subgroups <em>before</em> deploying a model. Libraries like <code>Fairlearn</code> (Python) can help.</li>
+<li><strong>Auditing:</strong> Regularly audit models for bias and performance disparities across groups.</li>
+<li><strong>Transparency &amp; Explainability:</strong> Use techniques (like SHAP or LIME) to understand <em>why</em> a model makes certain predictions, which can help uncover hidden biases.</li>
+<li><strong>Feedback Loops:</strong> Implement mechanisms to collect feedback on model performance and fairness from users and affected communities.</li>
+</ul></li>
+<li><strong>Human Oversight &amp; Diverse Teams:</strong>
+<ul>
+<li><strong>Diverse Teams:</strong> Having development teams with diverse backgrounds and perspectives helps identify potential biases that might otherwise be missed.</li>
+<li><strong>Ethical Review:</strong> Incorporate ethical reviews and checklists into the development process.</li>
+<li><strong>Context Matters:</strong> Always consider the specific context and potential impact of the AI system.</li>
+</ul></li>
+</ol>
+<p>```python # — Conceptual Example: Using Fairlearn for Metrics — # Note: This requires installing fairlearn: pip install fairlearn</p>
+</section>
+<section id="assume-you-have" class="level1">
+<h1>Assume you have:</h1>
+</section>
+<section id="y_true-true-labels-e.g.-1-if-loan-repaid-0-if-defaulted" class="level1">
+<h1>y_true: True labels (e.g., 1 if loan repaid, 0 if defaulted)</h1>
+</section>
+<section id="y_pred-model-predictions-e.g.-1-if-predicted-repay-0-if-predicted-default" class="level1">
+<h1>y_pred: Model predictions (e.g., 1 if predicted repay, 0 if predicted default)</h1>
+</section>
+<section id="sensitive_features-group-membership-e.g.-a-b-c" class="level1">
+<h1>sensitive_features: Group membership (e.g., ‘A’, ‘B’, ‘C’)</h1>
+</section>
+<section id="to-run-this-cell-youd-need-actual-data-in-these-variables." class="level1">
+<h1>To run this cell, you’d need actual data in these variables.</h1>
+</section>
+<section id="this-is-just-to-show-the-idea." class="level1">
+<h1>This is just to show the idea.</h1>
+</section>
+<section id="try" class="level1">
+<h1>try:</h1>
+</section>
+<section id="from-fairlearn.metrics-import-metricframe-count-true_positive_rate" class="level1">
+<h1>from fairlearn.metrics import MetricFrame, count, true_positive_rate</h1>
+</section>
+<section id="import-pandas-as-pd" class="level1">
+<h1>import pandas as pd</h1>
+</section>
+<section id="example-dummy-data-replace-with-real-data" class="level1">
+<h1># Example dummy data (replace with real data)</h1>
+</section>
+<section id="data-y_true-1-0-1-1-0-0-1-1-1-0" class="level1">
+<h1>data = {‘y_true’: [1, 0, 1, 1, 0, 0, 1, 1, 1, 0],</h1>
+</section>
+<section id="y_pred-1-1-1-0-0-1-0-1-1-0" class="level1">
+<h1>‘y_pred’: [1, 1, 1, 0, 0, 1, 0, 1, 1, 0],</h1>
+</section>
+<section id="sensitive_features-a-b-a-b-a-b-a-b-a-b" class="level1">
+<h1>‘sensitive_features’: [‘A’, ‘B’, ‘A’, ‘B’, ‘A’, ‘B’, ‘A’, ‘B’, ‘A’, ‘B’]}</h1>
+</section>
+<section id="y_true-pd.seriesdatay_true" class="level1">
+<h1>y_true = pd.Series(data[‘y_true’])</h1>
+</section>
+<section id="y_pred-pd.seriesdatay_pred" class="level1">
+<h1>y_pred = pd.Series(data[‘y_pred’])</h1>
+</section>
+<section id="sensitive_features-pd.seriesdatasensitive_features" class="level1">
+<h1>sensitive_features = pd.Series(data[‘sensitive_features’])</h1>
+</section>
+<section id="calculate-true-positive-rate-grouped-by-sensitive-feature" class="level1">
+<h1># Calculate True Positive Rate grouped by sensitive feature</h1>
+</section>
+<section id="metrics" class="level1">
+<h1>metrics = {</h1>
+</section>
+<section id="tpr-true_positive_rate" class="level1">
+<h1>‘tpr’: true_positive_rate,</h1>
+</section>
+<section id="count-count" class="level1">
+<h1>‘count’: count</h1>
+</section>
+<section id="section" class="level1">
+<h1>}</h1>
+</section>
+<section id="use-metricframe-to-calculate-metrics-across-groups" class="level1">
+<h1># Use MetricFrame to calculate metrics across groups</h1>
+</section>
+<section id="grouped_on_sens-metricframemetricsmetrics" class="level1">
+<h1>grouped_on_sens = MetricFrame(metrics=metrics,</h1>
+</section>
+<section id="y_truey_true" class="level1">
+<h1>y_true=y_true,</h1>
+</section>
+<section id="y_predy_pred" class="level1">
+<h1>y_pred=y_pred,</h1>
+</section>
+<section id="sensitive_featuressensitive_features" class="level1">
+<h1>sensitive_features=sensitive_features)</h1>
+</section>
+<section id="printfairness-metrics-true-positive-rate-per-group" class="level1">
+<h1>print(“Fairness Metrics (True Positive Rate per group):”)</h1>
+</section>
+<section id="printgrouped_on_sens.by_group" class="level1">
+<h1>print(grouped_on_sens.by_group)</h1>
+</section>
+<section id="you-can-then-analyze-the-differences-in-tpr-between-groups-a-and-b" class="level1">
+<h1># You can then analyze the differences in TPR between groups A and B</h1>
+</section>
+<section id="a-large-difference-might-indicate-an-equal-opportunity-fairness-violation." class="level1">
+<h1># A large difference might indicate an Equal Opportunity fairness violation.</h1>
+</section>
+<section id="except-importerror" class="level1">
+<h1>except ImportError:</h1>
+</section>
+<section id="printfairlearn-library-not-installed.-skipping-metric-calculation-example." class="level1">
+<h1>print(“Fairlearn library not installed. Skipping metric calculation example.”)</h1>
+</section>
+<section id="except-nameerror" class="level1">
+<h1>except NameError:</h1>
+</section>
+<section id="printdummy-data-variables-not-defined.-skipping-metric-calculation-example." class="level1">
+<h1>print(“Dummy data variables not defined. Skipping metric calculation example.”)</h1>
+<p>print(“–&gt; The code above shows conceptually how libraries like Fairlearn can measure fairness metrics across groups.”)</p>
+<section id="conclusion-building-a-fairer-future-with-ai" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-building-a-fairer-future-with-ai">Conclusion: Building a Fairer Future with AI</h2>
+<p>Bias in AI is a complex, multifaceted problem without easy solutions. It requires constant vigilance, critical thinking, and a commitment to ethical principles throughout the data science lifecycle.</p>
+<p>As creators of these powerful technologies, we must move beyond purely technical objectives and embrace our responsibility to build systems that are not only intelligent but also fair and equitable. This involves:</p>
+<ul>
+<li>Being aware of potential sources of bias.</li>
+<li>Proactively measuring and monitoring fairness.</li>
+<li>Engaging in thoughtful discussions about trade-offs between different fairness criteria.</li>
+<li>Advocating for diverse teams and ethical practices within our organizations.</li>
+</ul>
+<p>Building responsible AI is an ongoing journey, not a final destination. By integrating fairness considerations into our daily work, we can help ensure that AI benefits everyone in society, not just a privileged few.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
