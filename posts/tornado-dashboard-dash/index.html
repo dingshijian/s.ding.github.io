@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index – dat303-blog</title>
+<title>Building an Interactive US Tornado Dashboard – dat303-blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Building an Interactive US Tornado Dashboard</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -156,9 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Title: “Building an Interactive US Tornado Dashboard with Dash and Plotly” Author: Shawn Ding Date: 2025-04-25 Categories: [Python, Dash, Plotly, Data Visualization, Data Cleaning] jupyter: python3</p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+
 <p>Tornadoes are powerful and destructive weather phenomena. Understanding their historical occurrence, intensity, and geographical distribution is crucial for awareness and preparedness. This post walks through the creation of an interactive web dashboard built using Python, specifically leveraging the Dash framework and Plotly for visualizations. The dashboard allows users to explore US tornado data from 1980 to 2024, visualizing events on a map, examining state-level counts, and analyzing trends over time.</p>
 <p>We’ll cover:</p>
 <ol type="1">
@@ -168,7 +182,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Interactive Visualizations:</strong> Creating dynamic maps and charts with Plotly that respond to user input.</li>
 </ol>
 <p>Let’s dive into the code!</p>
-</section>
 <section id="data-acquisition-and-initial-setup" class="level2">
 <h2 class="anchored" data-anchor-id="data-acquisition-and-initial-setup">1. Data Acquisition and Initial Setup</h2>
 <p>The foundation of our dashboard is historical weather data. We’re using a dataset containing US weather events from 1980-2024, sourced from a publicly accessible Google Drive link.</p>
